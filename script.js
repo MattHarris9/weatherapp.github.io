@@ -3,10 +3,10 @@ $(document).ready(function (){
 
 });
 
-function displayMovieInfo() {
+function displayWeatherInfo() {
 
-    var movie = $(this).attr("data-name");
-    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
+    var weather = $(this).attr("data-name");
+    var queryURL = "api.openweathermap.org/data/2.5/weather?q={city name}" + weather + "&apikey=fa8b4ae438dc565e3349aaeb6215b208";
 
     $.ajax({
       url: queryURL,
@@ -14,7 +14,7 @@ function displayMovieInfo() {
     }).then(function(response) {
 
       
-      var movieDiv = $("<div>");
+      var weatherDiv = $("<div>");
       console.log(response);
       var pRating = $("<p>");
       pRating.text(response.Rated);
@@ -59,17 +59,17 @@ function displayMovieInfo() {
   $("#add-movie").on("click", function(event) {
     event.preventDefault();
     
-    var movie = $("#movie-input").val().trim();
+    var weather = $("#weather-input").val().trim();
 
     
-    movies.push(movie);
+    weathers.push(weather);
 
  
     renderButtons();
   });
 
  
-  $(document).on("click", ".movie", displayMovieInfo);
+  $(document).on("click", ".movie", displayWeatherInfo);
 
  
   renderButtons();
