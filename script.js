@@ -1,8 +1,3 @@
-$(document).ready(function (){
-
-
-});
-
 function getLocation() {
     var x = document.getElementById("recent-search");
     if (navigator.geolocation) {
@@ -18,9 +13,9 @@ function getLocation() {
    console.log(lat);
    console.log(lon);
 
-    var APIkey = "d95fc1da79853f3038b9424209b7d6ab"
+    var APIkey = "fa8b4ae438dc565e3349aaeb6215b208"
     var uvWeatherURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIkey;
-    var localWeatherURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=d95fc1da79853f3038b9424209b7d6ab";
+    var localWeatherURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=fa8b4ae438dc565e3349aaeb6215b208";
    
    // Get the local 5 day forecast for the user's current location
    function localWeather(){
@@ -93,6 +88,8 @@ function getLocation() {
           $("#local-five-icon-five").attr("src", localFiveIconFive);
           $("#local-five-temp-five").prepend(localFiveTempFive); 
           $("#local-five-humid-five").prepend(localFiveHumidFive);
+
+        
        });
    }
    // Get the UV value 
